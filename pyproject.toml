@@ -7,8 +7,6 @@ authors = ["Edd Salkield <edd@salkield.uk>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 youtube_dl = "^2021.2.10"
-llvmlite = "^0.35.0"
-cython = "^0.29.21"
 madmom = "^0.16.1"
 typer = "^0.3.2"
 numpy = "^1.20.1"
