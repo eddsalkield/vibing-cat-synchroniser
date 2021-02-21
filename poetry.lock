@@ -144,14 +144,6 @@ pyparsing = ">=2.0.2"
 
 [[package]]
 category = "main"
-description = "Object-oriented filesystem paths"
-name = "pathlib"
-optional = false
-python-versions = "*"
-version = "1.0.1"
-
-[[package]]
-category = "main"
 description = "Python Imaging Library (Fork)"
 name = "pillow"
 optional = false
@@ -282,7 +274,7 @@ python-versions = "*"
 version = "2021.2.10"
 
 [metadata]
-content-hash = "e8cf7bd43ef9560643bd944aaef0d54fbc1eea0b602362151c4c63bc6b41a7af"
+content-hash = "74779a85a83520e90ec20b14061a60a021b313fe7d1953bd48585974c1d8c886"
 lock-version = "1.0"
 python-versions = "^3.9"
 
@@ -463,9 +455,6 @@ numpy = [
 packaging = [
     {file = "packaging-20.9-py2.py3-none-any.whl", hash = "sha256:67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a"},
     {file = "packaging-20.9.tar.gz", hash = "sha256:5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"},
-]
-pathlib = [
-    {file = "pathlib-1.0.1.tar.gz", hash = "sha256:6940718dfc3eff4258203ad5021090933e5c04707d5ca8cc9e73c94a7894ea9f"},
 ]
 pillow = [
     {file = "Pillow-8.1.0-cp36-cp36m-macosx_10_10_x86_64.whl", hash = "sha256:d355502dce85ade85a2511b40b4c61a128902f246504f7de29bbeec1ae27933a"},
