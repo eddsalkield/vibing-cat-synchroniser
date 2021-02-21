@@ -2,15 +2,20 @@
 
 Composites and synchronises the vibing cat (or other video) to music!
 
-Examples (click to view):
+## Examples (click to view)
+
+### The cat responds well to pauses in the beat structure
 
 [![The cat responds well to pauses in the beat structure](examples/never_count_on_cat.jpg)](https://edd.salkield.uk/static/vibing_cat/never_count_on_cat.mp4)
 
-The cat responds well to pauses in the beat structure
+### It also deals well with changes in tempo
 
 [![It deals well with changes in tempo](examples/come_on_eileen.jpg)](https://edd.salkield.uk/static/vibing_cat/come_on_eileen.mp4)
 
-It also deals well with changes in tempo
+### And it's hilarious on a high bpm
+
+[![And it's hilarious on a high bpm](examples/through_the_fire_and_flames.jpg)](https://edd.salkield.uk/static/vibing_cat/through_the_fire_and_flames.mp4)
+
 
 ## Installation
 
