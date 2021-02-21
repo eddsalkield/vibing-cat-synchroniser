@@ -6,7 +6,11 @@ Examples (click to view):
 
 [![The cat responds well to pauses in the beat structure](examples/never_count_on_cat.jpg)](https://edd.salkield.uk/static/vibing_cat/never_count_on_cat.mp4)
 
+The cat responds well to pauses in the beat structure
+
 [![It deals well with changes in tempo](examples/come_on_eileen.jpg)](https://edd.salkield.uk/static/vibing_cat/come_on_eileen.mp4)
+
+It also deals well with changes in tempo
 
 ## Installation
 
