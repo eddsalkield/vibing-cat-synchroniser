@@ -1,12 +1,10 @@
-import youtube_dl
 import os, stat
 from madmom.features.beats import RNNBeatProcessor
-import subprocess
-import pdb
 import typer
 from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
+import shlex
 
 def main():
     typer.run(process)
@@ -43,7 +41,8 @@ def process(audio_file: Path = typer.Argument(..., help='The audio file to beatm
         f.write(command)
         f.write('\n')
         f.write(command2)
-    os.chmod(output_render_script, os.stat(output_render_script).st_mode | stat.S_IXGRP | stat.S_IXOTH)
+    os.chmod(output_render_script, os.stat(output_render_script).st_mode | 
+            stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
 def analyse_audio(path, short_outlier_cutoff, long_outlier_cutoff,
         beat_threshold, show_plots):
@@ -188,23 +187,11 @@ def analyse_audio(path, short_outlier_cutoff, long_outlier_cutoff,
 
     return new_beats, beat_delays
 
-def run_ytdl(url: str):
-    ydl_opts = {
-        'progress_hooks': [process_hook],
-        'postprocessors': [{
-            'key': 'FFmpegVideoConvertor',
-            'preferedformat': 'mp4',
-        }],
-        'outtmpl': 'output.video',
-        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'
-    }
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([url])
-    subprocess.run(['ffmpeg', '-i', 'output.video.mp4', 'output.wav'])
-    analyse_audio('output.wav')
-
 def construct_ffmpeg_arguments(input_video, input_audio, output_video,
         beats_per_second, frames_per_beat, n_beats, beat_delays):
+    input_video = shlex.quote(str(input_video))
+    input_audio = shlex.quote(str(input_audio))
+    output_video = shlex.quote(str(output_video))
     command = f'ffmpeg -y -i {input_video} -i {input_audio} -filter_complex \\\n"'
 
     for i, beat_length in enumerate(beat_delays):
@@ -222,6 +209,10 @@ def construct_ffmpeg_arguments(input_video, input_audio, output_video,
 
     return command
 
-def chromakey(input_video, overlay_video, colorkey,output_video):
+def chromakey(input_video, overlay_video, colorkey, output_video):
+    input_video = shlex.quote(str(input_video))
+    overlay_video = shlex.quote(str(overlay_video))
+    output_video = shlex.quote(str(output_video))
+
     return f'ffmpeg -y -i {input_video} -i {overlay_video} -filter_complex "[1:v]colorkey={colorkey}[ckout];[0:v][ckout]overlay=0:main_h-overlay_h[despill];[despill] despill=green[colorspace];[colorspace]format=yuv420p[out]" -map "[out]" -map 1:a:0 {output_video}'
 
