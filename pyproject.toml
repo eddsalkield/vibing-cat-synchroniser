@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "vibing-cat"
+version = "0.1.0"
+description = ""
+authors = ["Edd Salkield <edd@salkield.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+youtube_dl = "^2021.2.10"
+llvmlite = "^0.35.0"
+cython = "^0.29.21"
+madmom = "^0.16.1"
+typer = "^0.3.2"
+pathlib = "^1.0.1"
+numpy = "^1.20.1"
+matplotlib = "^3.3.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+wheel = "^0.36.2"
+
+[tool.poetry.scripts]
+vibing-cat="vibing_cat:main"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

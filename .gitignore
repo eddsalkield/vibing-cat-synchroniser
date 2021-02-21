@@ -1,0 +1,8 @@
+*.pyc
+junk/
+vibing_cat/__pycache__/
+notes.txt
+vibing_cat.egg-info/
+intermediate.mp4
+output.mp4
+render.sh
